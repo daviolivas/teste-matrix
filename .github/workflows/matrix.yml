@@ -10,4 +10,6 @@ jobs:
         machine: ${{ fromJson(vars.machines) }}
     name: Voice Validation
     uses: daviolivas/teste-matrix-reusable/.github/workflows/matrix-reusable.yml@main
+    with:
+      machine_name: ${{ matrix.machine }}
     secrets: inherit
