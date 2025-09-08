@@ -7,7 +7,7 @@ jobs:
   validade-voice:
     strategy:
       matrix:
-        machine: ${{ secrets.machines }}
+        machine: ${{ vars.machines }}
     name: Voice Validation
     uses: daviolivas/teste-matrix-reusable/.github/workflows/matrix-reusable.yml@main
     secrets: inherit
