@@ -6,5 +6,6 @@ on:
 
   jobs:
     validade-voice:
+      name: Voice Validation
       uses: daviolivas/teste-matrix-reusable/.github/workflows/matrix-reusable.yml@main
       secrets: inherit
