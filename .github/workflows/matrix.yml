@@ -1,1 +1,10 @@
 name: teste
+
+on:
+  workflow_dispatch:
+  
+
+  jobs:
+    validade-voice:
+      uses: daviolivas/teste-matrix-reusable/.github/workflows/matrix-reusable.yml@main
+      secrets: inherit
