@@ -15,7 +15,22 @@ jobs:
 
   getting-status:
     name: Getting Status
+    strategy:
+      matrix:
+        machine: [ubuntu-24.04, ubuntu-22.04, ubuntu-20.04]
+    runs-on: ${{ matrix.machine }}
+
+    steps:
+    - name:
+      runs: |
+        echo "${{ matrix.machine }}" >> $GITHUB_SUMMARY
+
 
   check-status:
     name: Checking Status
-    runs-on:
+    runs-on: [ubuntu-24.04]
+
+    steps:
+    - name:
+      runs: |
+        echo "oi rs"
