@@ -14,5 +14,7 @@ jobs:
     secrets: inherit
 
   getting-status:
+    name: Getting Status
 
   check-status:
+    name: Checking Status
