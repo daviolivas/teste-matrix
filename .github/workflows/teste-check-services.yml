@@ -23,7 +23,7 @@ jobs:
     steps:
     - name:
       run: |
-        echo "${{ matrix.machine }}" >> $GITHUB_SUMMARY
+        echo "${{ matrix.machine }}" >> $$GITHUB_STEP_SUMMARY
 
 
   check-status:
