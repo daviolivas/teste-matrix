@@ -50,9 +50,10 @@ jobs:
         echo "oi rs"
 
         echo "### Resumo das saidas dos jobs da matriz:"
+        result=""
           
         for file in ./saidas/output-from-*/output.txt; do
-          echo "---"
-          cat "$file"
+          result+="$file</br>"
         done
-        echo "---"
+
+        echo "$result" >> $GITHUB_STEP_SUMMARY
