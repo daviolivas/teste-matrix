@@ -21,16 +21,38 @@ jobs:
     runs-on: ${{ matrix.machine }}
 
     steps:
-    - name:
+    - name: pegando status 
+      id: getting-status
       run: |
-        echo "${{ matrix.machine }}" >> $$GITHUB_STEP_SUMMARY
+        echo "esse é o runner ${{ matrix.machine }}. Ola novo job" > output.txt
+
+    - name: uploading o artefato
+      uses: actions/upload-artifact@v4
+      with:
+        name: output-from-${{ matrix.machine }}
+        path: output.txt
+
 
 
   check-status:
     name: Checking Status
+    needs: getting-status
     runs-on: [ubuntu-24.04]
 
     steps:
+    - name: Baixar todos os artefatos
+      uses: actions/download-artifact@v4
+      with:
+        path: ./saidas
+
     - name:
       run: |
         echo "oi rs"
+
+        echo "### Resumo das saidas dos jobs da matriz:"
+          
+        for file in ./saidas/output-from-*/output.txt; do
+          echo "---"
+          cat "$file"
+        done
+        echo "---"
