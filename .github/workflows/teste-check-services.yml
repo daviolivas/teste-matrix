@@ -1,4 +1,4 @@
-name: teste
+name: teste trademate
 
 on:
   workflow_dispatch:
