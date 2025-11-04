@@ -1,0 +1,18 @@
+name: teste
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  validade-voice:
+    strategy:
+      matrix:
+        machine: ${{ fromJson(vars.machines) }}
+    uses: daviolivas/teste-matrix-reusable/.github/workflows/matrix-reusable.yml@main
+    with:
+      machine_name: ${{ matrix.machine }}
+    secrets: inherit
+
+  getting-status:
+
+  check-status:
