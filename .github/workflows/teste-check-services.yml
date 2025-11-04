@@ -22,7 +22,7 @@ jobs:
 
     steps:
     - name:
-      runs: |
+      run: |
         echo "${{ matrix.machine }}" >> $GITHUB_SUMMARY
 
 
@@ -32,5 +32,5 @@ jobs:
 
     steps:
     - name:
-      runs: |
+      run: |
         echo "oi rs"
