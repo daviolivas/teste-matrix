@@ -53,7 +53,8 @@ jobs:
         result=""
           
         for file in ./saidas/output-from-*/output.txt; do
-          result+="$file</br>"
+          text=$(cat $file)
+          result+="$text</br>"
         done
 
         echo "$result" >> $GITHUB_STEP_SUMMARY
