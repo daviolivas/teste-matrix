@@ -17,7 +17,7 @@ jobs:
     name: Getting Status
     strategy:
       matrix:
-        machine: [ubuntu-24.04, ubuntu-22.04, ubuntu-20.04]
+        machine: [ubuntu-24.04, ubuntu-22.04]
     runs-on: ${{ matrix.machine }}
 
     steps:
